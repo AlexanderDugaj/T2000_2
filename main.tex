@@ -1,0 +1,194 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{geometry}
+ \geometry{
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{graphicx}
+\usepackage{listings}
+\lstdefinelanguage{TypeScript}{
+    keywords={const, let, function, if, else, return, class, extends, super, import, export, new, public, private, protected, True, False},
+    morekeywords={[2]true, false, null, undefined},
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]"
+}
+\lstset{
+    language=TypeScript,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    keywordstyle={[2]\color{orange}},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    frame=single,
+    breaklines=true,
+    showspaces=false,
+    showtabs=false,
+    captionpos=b,
+    columns=flexible,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+}
+\usepackage{tocloft}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
+
+\tikzset{
+  process/.style={
+    rectangle, draw=black, fill=blue!10, rounded corners, minimum width=3.5cm, minimum height=2cm, align=center
+  },
+  testbereich/.style={
+    rectangle, draw=orange!80!black, fill=orange!10, rounded corners, minimum width=3.5cm, minimum height=1.2cm, align=center
+  },
+  arrow/.style={
+    -{Latex[length=3mm]}, thick,
+  }
+}
+
+\usepackage{placeins}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage[none]{hyphenat}
+\usepackage{setspace}  % Für den Zeilenabstand
+\usepackage{fontspec}
+\usepackage{ragged2e}  % Für Blocksatz
+\renewcommand{\normalsize}{\fontsize{12}{14}\selectfont} 
+\renewcommand{\listfigurename}{}
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\renewcommand{\refname}{Literaturverzeichnis} 
+\renewcommand{\figurename}{} % Entfernt das Wort "Abbildung" vor Bildern% 
+\setlength{\cftbeforesecskip}{4pt} 
+% Kopfzeilen-Einstellungen%
+\renewcommand{\baselinestretch}{1.5} \pagestyle{fancy}
+\fancyhf{} 
+\setlength{\textheight}{240mm}  % Reduziert die Höhe des Textbereichs
+\setlength{\footskip}{20mm} 
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{45.97pt}  
+\fancyhead[L]{\includegraphics[width=4cm]{images/LHsystemsLogo.png}}  
+\fancyhead[R]{\includegraphics[width=3.5cm]{images/DHBW-Logo.svg.png}} 
+
+\begin{document}
+ \justifying  
+ \sloppy
+
+\pagenumbering{gobble}
+
+\setlength{\topskip}{60pt}  
+
+% Titel
+\begin{center}
+    \setlength{\baselineskip}{18pt}
+    {\large \textbf{Visualisierung dynamischer Flugrestriktionen in der Applikation Very Versatile Visualizer}} \\[0.4cm]
+\end{center}
+
+\vspace{1cm}  
+
+% Studiengang & Hochschule
+\begin{center}
+    \setlength{\baselineskip}{18pt}
+    im Studiengang \\
+    {\color{red} \textbf{Angewandte Informatik}}\\
+    an der Dualen Hochschule Baden-Württemberg Mannheim
+\end{center}
+
+\vspace{1.5cm}
+
+% Autor
+\begin{center}
+    \setlength{\baselineskip}{18pt}
+    von \\
+    {\color{red} \textbf{Alexander Dugaj}}
+\end{center}
+
+\vspace{5cm}
+
+% Weitere Informationen
+\begin{flushleft}
+    \begin{tabular}{l l}
+        Abgabedatum:          & {\color{red} 28.08.2025} \\[0.3cm]
+        Bearbeitungszeitraum: & {\color{red} 24 Wochen}  \\[0.3cm]
+        Matrikelnummer, Kurs: & {\color{red} 1579702, Tinf23Ai2} \\[0.3cm]
+        Ausbildungsfirma:     & {\color{red} Lufthansa Systems, Raunheim} \\[0.3cm]
+        Betrieblicher Betreuer: & {\color{red} Jonas Sperling} \\[1cm]
+    \end{tabular}
+\end{flushleft}
+
+\vfill
+
+% Unterschrift
+\begin{flushleft}
+    \rule{6cm}{0.4pt} \\ 
+    Unterschrift Betreuer
+\end{flushleft}
+
+\newpage
+
+\section*{Erklärung}
+\addcontentsline{toc}{section}{Erklärung}
+
+\begin{center}
+    \fcolorbox{black}{lightgray}{  
+        \parbox{0.95\textwidth}{
+            \textbf{Erklärung} \\[1em]
+            Ich versichere hiermit, dass ich meine Projektarbeit mit dem Thema "Visualisierung dynamischer Flugrestriktionen in der Applikation Very Versatile Visualizer" selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Ich versichere zudem, dass die eingereichte elektronische Fassung mit der gedruckten Fassung übereinstimmt. \\[2em]
+            
+            % Linien für Unterschrift und Datum
+            \rule{5cm}{0.4pt} \hspace{4cm} \rule{5cm}{0.4pt} \\[1em]
+            
+            % Beschriftungen der Linien
+            \hspace{0cm} Ort, Datum \hspace{6.75cm} Unterschrift}}
+\end{center}
+
+\newpage
+
+\section*{Abstrakt}
+\addcontentsline{toc}{section}{Abstrakt}
+\newpage
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+
+\newpage
+\section*{Glossar}
+\addcontentsline{toc}{section}{Glossar}
+
+\newpage
+\section*{Abbildungsverzeichnis}
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+
+\listoffigures  
+
+\newpage
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}  % Startet die Nummerierung neu ab 1
+\fancyfoot[C]{\thepage}
+\section{Einleitung}
+% \section{Grundlagen}
+% \section{Analyse}
+% \section{Implementierung}
+% \section{Ergebnisse}
+% \section{Kritische Reflexion}
+
+% --- Ende Inhalt ---
+
+\newpage
+\pagenumbering{gobble}
+\begin{thebibliography}{9}  % Die Zahl bestimmt die Breite der Nummerierung
+\bibitem{quelle1}
+
+
+\end{thebibliography}
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+
+\end{document}

@@ -1,0 +1,7 @@
+\contentsline {section}{Erklärung}{}{section*.1}%
+\contentsline {section}{Abstrakt}{}{section*.2}%
+\contentsline {section}{Abstract}{}{section*.3}%
+\contentsline {section}{Glossar}{}{section*.4}%
+\contentsline {section}{Abbildungsverzeichnis}{}{section*.5}%
+\contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
+\contentsline {section}{Literaturverzeichnis}{}{section*.6}%
