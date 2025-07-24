@@ -10,19 +10,12 @@
 \contentsline {section}{\numberline {2}Grundlagen}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Theoretische Grundlagen}{4}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Flugrestriktionen}{4}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Disjunktive Normalform}{5}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Flugrestriktionen in Lido Flight}{5}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.2}Flugrestriktionen in Lido Flight}{5}{subsubsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.2}Teschnische Grundlagen}{5}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Very Versatile Visualizer (unsere appliaktion)}{5}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Svelte}{5}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Java Spring Boot}{5}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Figma}{5}{subsubsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.5}Swagger UI}{5}{subsubsection.2.2.5}%
-\contentsline {section}{\numberline {3}Entwicklungsprozess}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Anforderungen}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Design}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Disjunktive Normalf visualisieren}{6}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Karten Elemnte Konfigurieren}{6}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Bewertung der Ergebnisse}{7}{section.4}%
+\contentsline {subsubsection}{\numberline {2.2.3}Figma}{5}{subsubsection.2.2.3}%
+\contentsline {section}{\numberline {3}Haupteil}{6}{section.3}%
+\contentsline {section}{\numberline {4}Ergebnisse und Bewertung}{7}{section.4}%
 \contentsline {section}{\numberline {5}Kritische Reflexion}{8}{section.5}%
 \contentsline {section}{Literaturverzeichnis}{}{section*.6}%

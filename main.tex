@@ -1,4 +1,5 @@
 \documentclass[a4paper,12pt]{article}
+\hbadness=10000
 \usepackage{geometry}
  \geometry{
  total={170mm,257mm},
@@ -140,11 +141,9 @@
         \parbox{0.95\textwidth}{
             \textbf{Erklärung} \\[1em]
             Ich versichere hiermit, dass ich meine Projektarbeit mit dem Thema "Visualisierung dynamischer Flugrestriktionen in der Applikation Very Versatile Visualizer" selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Ich versichere zudem, dass die eingereichte elektronische Fassung mit der gedruckten Fassung übereinstimmt. \\[2em]
-            
-            % Linien für Unterschrift und Datum
+        
             \rule{5cm}{0.4pt} \hspace{4cm} \rule{5cm}{0.4pt} \\[1em]
             
-            % Beschriftungen der Linien
             \hspace{0cm} Ort, Datum \hspace{6.75cm} Unterschrift}}
 \end{center}
 
@@ -174,18 +173,53 @@
 \setcounter{page}{1}  % Startet die Nummerierung neu ab 1
 \fancyfoot[C]{\thepage}
 \section{Einleitung}
-% \section{Grundlagen}
-% \section{Analyse}
-% \section{Implementierung}
-% \section{Ergebnisse}
-% \section{Kritische Reflexion}
+Die zivile Luftfahrt ist zunehmend von dynamischen Prozessen und komplexen Regeln geprägt. Diese regeln ständig einzuhalten in nicht nur schwer, sondern kann auch sehr schnell teuer werden, wenn man dies uneffizient macht. Es gibt verschiedene Arten von Regeln in der Flugbranche. Zu diesen gehören auch die Flugrestriktionen. Diese Flugrestriktionen sind spezielle Regeln die ein Flug von Start bis Landung einhalten muss. Zum einen haben diese sicherheitsrelevante Hintergründe aber zum anderen sind es einfach regeln wie zum Beispiel aufgrund des Militärs. Die Herauforderung ist diese Regeln bestmöglich in den Flugrouten zu beachten und vorallem einzuhalten. \\
+Die Abteilung Lido Flight Planning arbeitet konkret an solchen Flugoptimierungen. Während man eine Flugroute plant muss man wie bereits erwähnt auf viele regeln achten. Damit auch alle Restriktionen, die auf eine Flugroute fallen, erfüllt sind. Diese Daten werden bei uns Intern in disjunktive Normalformen umgeformt, damit man diese leichter interpretieren kann. Um eine Flugroute jetzt am besten planen kann, müssen neben vielen anderen Aspekten auch die Restriktionen verständlich sein.
+\subsection{Problemstellung}
+Flugretriktionen sind wichtig einzuhalten. Aber dafür muss man diese verstehen und weiter nutzen können, aber leider können Retsriktionen belibig lange und somit auch belibieg komplex werden. Diese Restriktionen liegen als reine roh daten in anderen Applikationen. Bis man diese Restriktion vollständig verstanden hat kann es einige Zeit dauern. Deshalb werden diese bei uns in disjunktive Normalformen umgewandelt. Damit muss ein Flug nurnoch ein Fall erfüllen, damit diese Flugrestriktion gilt. Aber das Problem ist die Disjunktive Normalform kann beliebig lang werden und somit wird auch das einsehen und verstehen immer schwerer. Wenn die Einsicht immer wieder länger dauert, verliert das Team viel Zeit für das Verständnis der Restriktionen und nicht für die Flugplanung oder ähniches. Außerdem würde im Falle eines Fehlers in der Flugroute nur schwer herausgefunden werden, woran es liegt. Mit dieser Arbeit könnte es als zusätzliche Hilfetool genutzt werden. Aktuell fehlt eine intuitive Möglichkeit, Flugrestriktionen vollständig und visuell verständlich darzustellen. Zwar existiert bereits eine erste Lösung in einer separaten Applikation, jedoch ist diese funktional eingeschränkt und ermöglicht nur den Zugriff auf einen kleinen Teil der verfügbaren Restriktionsdaten. Besonders bei der gleichzeitigen Betrachtung von Flugroute und Restriktionen entsteht dadurch ein hoher Aufwand. Das kostet nicht nur Zeit, sondern erhöht auch das Risiko von Planungsfehlern und ineffizienten Entscheidungen im Flugroutenmanagement.
+\begin{figure}[H]
+    \centering
+\includegraphics[width=1\textwidth]{images/Bespiel1.png}
+\caption{Bestehende Darstellung}
+\end{figure}
+Abbildung 1 ist ein Auschnitt aus der bestehnden Lösung. LIEBER AN ANFANG DES HAUPTTEILES
+\subsection{Ziel}
+Damit die Flugrestriktion ganz einfach und schnell verstanden werden und zudem weiterverwendet verden können, ist das Ziel dieser Arbeit diese Restriktion in der Applikation vvv in einem eigenen Bereich anzuzeigen, damit man auf einem Blick alles einsehen kann, was man braucht. Das soll sicherstellen, das die Nutzer sofort auf einem Blick das sehen was sie brauchen und somit ein Menge Zeit sparen. Ausserdem sollen nicht nur die Restriktion als disjunktive Normalform gezeigt werden, sondern auch sämtliche zusätzliche Informationen anzeigen. Außerdem sollen diese Restriktion auf der in der Applikation verfügbaren Karte angezeigt werden. Damit kann man die restriktion nicht nur logisch anhand der dnf sehen, sondern auch praktisch an der Karte verstehen.  Meine Lösung soll von Nutzer aus der Kundensicht genutzt werden aber auch aus der Entwicklersicht.
+\subsection{Aufbau der Arbeit}
+\newpage
+\section{Grundlagen}
+\subsection{Theoretische Grundlagen}
+\subsubsection{Flugrestriktionen}
+Flugrestriktionen sind einschränkende Vorgaben, die den Luftverkehr in bestimmten geografischen Bereichen oder unter bestimmten Bedingungen regeln. Sie dienen in erster Linie der Sicherheit, Effizienz und Koordination im nationalen und internationalen Luftraum. Solche Restriktionen legen beispielsweise fest, wo, wann und wie ein Luftfahrzeug bestimmte Zonen durchfliegen darf oder muss. Die Einschränkungen können sich auf Höhenbereiche, Zeiträume, Flugrichtungen oder spezifische Regeln beziehen. Besonders häufig wirken sich Flugrestriktionen auf sogenannte Wegpunkte aus. Dabei handelt es sich um geografisch exakt definierte Koordinaten im dreidimensionalen Raum, die zur Navigation und Strukturierung von Flugrouten dienen. Mehrere solcher Wegpunkte lassen sich zu sogenannten Segmenten verketten, die gemeinsam einen Abschnitt einer geplanten Flugstrecke bilden. Darüber hinaus gelten für definierte Lufträume (Flugbereiche oder Airspaces) häufig spezielle Einschränkungen. Auch für Flughäfen existieren restriktive Vorschriften, etwa im Zusammenhang mit Anflugverfahren, wie soll der Flughafen genutzt werden, temporären Sperrungen oder militärischer Nutzung. Das sind vier der am meisten vorkommenden Typen bei dieser Abreit, und auf denen sollte auch der Fokus liegen. ABer trotzdem gibt es natürlich auch weitere. \\
+In der Praxis sind zwei Arten von Flugrestriktionen besonders relevant. zum einen gibt es die TFRs (Temporary Flight Restrictions) und zum anderen die NOTAMs (Notice to Airmen). Temporäre Flugbeschränkungen sind zeitlich begrenzte Luftraumbeschränkungen, die von der US-Luftfahrtbehörde Federal Aviation Administation (FAA) eingerichtet werden, um Sicherheit, Schutz oder Privatsphäre zu gewährleisten. Solche Beschränkungen treten zum Beispiel bei Naturkatastrophen, dem Transport von Staatsgästen oder Waldbränden in Kraft und dürfen ohne Genehmigung nicht überflogen werden. Die entsprechenden Informationen werden über das NOTAM-System veröffentlicht (vgl.\cite{quelle1}). NOTAMs sind offizielle Mitteilungen der Luftfahrtbehörde, die kurzfristige Änderungen, Einschränkungen oder Gefahren im Luftverkehr bekannt geben. Sie dienen der Information von Pilotinnen und Flugplanerinnen über sicherheitsrelevante Luftraumänderungen (vgl.\cite{quelle1}).
+ \subsubsection{Disjunktive Normalform}
+ \subsubsection{Flugrestriktionen in Lido Flight}
 
-% --- Ende Inhalt ---
+Die Abteilung, in der diese Arbeit erfolgt ist Lido Flight Planning Software. Diese... \\
+Diese wandelt die Flugrestriktionen in Disjunktive Normalforemn um. Disjunktive Normalforemn 
+\subsection{Teschnische Grundlagen}
+\subsubsection{Very Versatile Visualizer (unsere appliaktion)}
+\subsubsection{Svelte}
+\subsubsection{Java Spring Boot}
+\subsubsection{Figma}
+\subsubsection{Swagger UI}
+\newpage
+\section{Entwicklungsprozess}
+\subsection{Anforderungen}
+\subsection{Design}
+\subsection{Disjunktive Normalf visualisieren}
+\subsection{Karten Elemnte Konfigurieren}
+\newpage
+\section{Bewertung der Ergebnisse}
+\newpage
+\section{Kritische Reflexion}
+
 
 \newpage
 \pagenumbering{gobble}
 \begin{thebibliography}{9}  % Die Zahl bestimmt die Breite der Nummerierung
 \bibitem{quelle1}
+Blade Urban Air Mobility, 2024, Temporary Flight Restrictions (TFR), https://www.blade.com/TFR, abgerufen am 18.07.2025
 
 
 \end{thebibliography}
