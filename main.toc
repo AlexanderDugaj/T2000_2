@@ -19,10 +19,10 @@
 \contentsline {subsubsection}{\numberline {2.2.4}Figma}{5}{subsubsection.2.2.4}%
 \contentsline {subsubsection}{\numberline {2.2.5}Swagger UI}{5}{subsubsection.2.2.5}%
 \contentsline {section}{\numberline {3}Entwicklungsprozess}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Anforderungen}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Design}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Disjunktive Normalf visualisieren}{6}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Karten Elemnte Konfigurieren}{6}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Bewertung der Ergebnisse}{7}{section.4}%
-\contentsline {section}{\numberline {5}Kritische Reflexion}{8}{section.5}%
+\contentsline {subsection}{\numberline {3.1}Anforderungen}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Design}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Disjunktive Normalf visualisieren}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Karten Elemnte Konfigurieren}{9}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Bewertung der Ergebnisse}{10}{section.4}%
+\contentsline {section}{\numberline {5}Kritische Reflexion}{11}{section.5}%
 \contentsline {section}{Literaturverzeichnis}{}{section*.6}%

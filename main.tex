@@ -6,6 +6,7 @@
  left=20mm,
  top=20mm,
  }
+ \usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{listings}
 \lstdefinelanguage{TypeScript}{
@@ -205,7 +206,25 @@ Diese wandelt die Flugrestriktionen in Disjunktive Normalforemn um. Disjunktive 
 \subsubsection{Swagger UI}
 \newpage
 \section{Entwicklungsprozess}
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=1\textwidth]{images/VVVVorEntwicklung.png}
+\caption{VVV vor der Entwicklung}
+\end{figure}
+\begin{wrapfigure}{l}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.35\textwidth]{images/AirportTab.png}
+    \caption{Airport Register}
+\end{wrapfigure}
+In dieser Abbildung sieht man die Applikation VVV vor der Entwicklung der Restriktions Funktion. Im Zentrum ist die Karte zu sehen und auf der linken Seite sieht man die Registerkartenauswahl. Das sind jeweils verschieden Funktionalitäten wie zum Beispiel das erste Symbol, das abhebende Flugzeug. Nachdem auf das Symbol geklickt wurde, öffnet sich ein Seitenleiste, mit einem Suchfeld für Flughäfen. Dieses design ist bei jedem Register identsich, da man immer die selbe Komponente nutzt. 
+\\\\\\
 \subsection{Anforderungen}
+Bevor die Entwicklung begonnen werden kann, ist es wichtig, die funktionalen Anforderungen an diean die geplante Visualisierung zu definieren. Diese Anforderungen dienen als Grundlage für die Entwicklung und helfen, den Fokus auf die wesentlichen Aspekte zu legen.\\
+Die zentrale Anforderung besteht darin, dass Flugrestriktionen gezielt durch Eingabe einer eindeutigen ID sowie eines zugehörigen Restriktionstyps gesucht werden können. Bei einer gültigen Eingabe soll die entsprechende Restriktion in Form einer disjunktiven Normalform (DNF) angezeigt werden. Sollte die ID nicht existieren oder die Eingabe ungültig sein, muss eine entsprechende Fehlermeldung erscheinen. Die Darstellung der DNF soll dabei so aufbereitet sein, dass sie für Nutzerinnen und Nutzer leicht verständlich ist. Das bedeutet, dass die einzelnen Bedingungen und Klauseln klar erkennbar sind und insbesondere, ob ein Literal negiert ist \(( \neg A )\) oder nicht \(( A )\). Die Herausforderung hierbei ist, dass die DNF beliebig lang sein kann. Jede Einzelne Klausel kann ebenfalls eine beliebige Anzahl an Literalen haben. Solche Fälle sollen dementsrpechend übersichtlich dargestellt werden, um eine klare Lesbarkeit zu gewährleisten.
+Eine weitere wesentliche Anforderung ist die eindeutige Erkennung des Literaltyps. Es existieren eine Menge an verschiedenen Literaltypen, aber es soll in erster Linie zwischen den wichtigsten Literaltypen klar unterschieden werden können. Diese sollen visuell klar voneinander unterscheidbar sein, sodass Nutzerinnen und Nutzer auf einen Blick erkennen können, um welche Art von Element es sich jeweils handelt. Diese Literaltypen kommen am häufigsten vor. Darüber hinaus enthält jeder Literaltyp zusätzliche kontextspezifische Informationen, die für das Verständnis der Flugrestriktion von Bedeutung sind. Wie Bei Flughäfen ist beispielsweise zu unterscheiden, ob es sich um den Abflug- oder den Ankunftsflughafen handelt. Solche Zusatzinformationen sollen innerhalb der Visualisierung ebenfalls deutlich und übersichtlich dargestellt werden. Schließlich gibt es bei der Nutzung der Funktionalität Variationen. So bevorzugen manche Personen bei der Arbeit mit den Literaltypen die Anzeige der eindeutigen ID, während andere lieber den ausgeschriebenen Namen verwenden. Deshalb soll ebenfalls eine Funktionlität hinzufügt werden, bei der die Nutzer selber entscheiden können, welche Anzeige sie grade benötigen. \\
+Nachdem die DNF verständlich visualsiert ist, sollen die relevanten  Literalentypen auf der Karte dargestellt werden. Die Herausforderung besteht darin, eine Überladung der Karte zu vermeiden und gleichzeitig alle entscheidenden Informationen auf einen Blick verfügbar zu machen. Zudem soll sichergestellt werden das die Karte genau das anzeigt, was die restriktion ausdrücken will. Das bedeutet es muss sichergesetllt werden, dass auch negierte Literale anders gekennzeichnet werden wie positive Literale. So muss beispielsweise in einer Restriktion wie \[( A \land B) \lor (A \land B \land C)\] anders dargestellt werden, als \[( \neg A \land B) \lor (\neg A \land B \land C).\] Der Hintergrund hier ist, das wenn eine Restriktion ein Literal \(A\) nur als positiv hat, bedeutet es, man muss dieses Element befliegen um diese Restrikiton zu erfüllen. Andersrum sollte ein Literal \(A\) nur negiert vorkommen bedeutet dies, man darf diese Elemente unter keinem Umstand befliegen. Sollte man aber einen Fall wie \[(\neg A \land B) \lor (A \land B \land \neg C)\] haben, so muss man noch darstellen das Literal \(A\) in einer Klausel beflogen werden muss, aber in einer anderen nicht. Die Karte soll somit diese Logik klar darstellen, damit man diese Information auf einem Blick hat und ggf. weiter verwednen kann. \\
+Eine wichtige nicht-funktionale Anforderung betrifft das visuelle Erscheinungsbild der Anwendung. Der Very Versatile Visualizer (VVV) zeichnet sich durch ein modernes, übersichtliches und benutzerfreundliches Design aus. Deshalb sollten die hier erstelleten Funktionaitäten sich in das bestehende Designkonzept integrieren. Das bedeutet, dass sich die neuen Darstellungen und Interaktionen visuell und strukturell an den bereits vorhandenen Registerinhalten orientieren und keine stilistischen Brüche erzeugen.
+\[optionale\space Features\space erwaehnen ?\]
 \subsection{Design}
 \subsection{Disjunktive Normalf visualisieren}
 \subsection{Karten Elemnte Konfigurieren}
